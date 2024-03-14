@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.RickAndMortyapp" parent="Base.Theme.RickAndMortyapp" />
+    <style name="TextStyle" parent="Base.Theme.RickAndMortyapp">
+        <item name="fontFamily">@font/rick</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
