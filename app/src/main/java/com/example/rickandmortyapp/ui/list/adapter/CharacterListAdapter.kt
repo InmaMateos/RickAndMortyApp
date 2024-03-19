@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyapp.R
-import com.example.rickandmortyapp.domain.model.CharacterModel
 import com.example.rickandmortyapp.domain.model.ResultModel
 
-class CharacterListAdapter( private var characterList: List<ResultModel>): RecyclerView.Adapter<CharacterListViewHolder>() {
+class CharacterListAdapter( private var characterList: List<ResultModel>,
+    private val onItemSelected: (ResultModel)->Unit
+): RecyclerView.Adapter<CharacterListViewHolder>() {
 
     fun updateList(characterList: List<ResultModel>){
         this.characterList = characterList
@@ -23,5 +24,8 @@ class CharacterListAdapter( private var characterList: List<ResultModel>): Recyc
 
     override fun onBindViewHolder(holder: CharacterListViewHolder, position: Int) {
         holder.bind(characterList[position])
+        holder.itemView.setOnClickListener{
+            onItemSelected(characterList[position])
+        }
     }
 }
