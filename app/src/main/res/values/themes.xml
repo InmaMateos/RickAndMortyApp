@@ -1,8 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.RickAndMortyapp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/bar</item>
     </style>
 
     <style name="Theme.RickAndMortyapp" parent="Base.Theme.RickAndMortyapp" />
@@ -10,5 +9,13 @@
         <item name="fontFamily">@font/rick</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDetailStyle" parent="Base.Theme.RickAndMortyapp">
+        <item name="fontFamily">@font/rick</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginLeft">45dp</item>
+        <item name="layout_goneMarginTop">15dp</item>
     </style>
 </resources>

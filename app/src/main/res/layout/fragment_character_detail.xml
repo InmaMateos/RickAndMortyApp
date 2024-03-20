@@ -5,79 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bar"
     tools:context=".ui.detail.view.CharacterDetailFragment">
 
-    <ImageView
-        android:id="@+id/ivCharacterDetail"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/red" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
 
-    <TextView
-        android:id="@+id/tvCharacterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCharacterDetail"
-        tools:text="Name"
-        android:textSize="40sp"
-        style="@style/TextStyle"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp">
 
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterName"
-       app:layout_constraintEnd_toStartOf="@id/tvSpecies"
-        tools:text="Status"
-        android:textSize="20sp"
-        style="@style/TextStyle"/>
 
-    <TextView
-        android:id="@+id/tvSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/tvStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterName"
-        tools:text="Species"
-        android:textSize="20sp"
-        style="@style/TextStyle"/>
-    <TextView
-        android:id="@+id/tvType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatus"
-        app:layout_constraintEnd_toStartOf="@+id/tvGender"
-        android:paddingStart="20dp"
-        tools:text="Type"
-        android:textSize="20sp"
-        style="@style/TextStyle"/>
+            <ImageView
+                android:id="@+id/ivCharacterDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:background="@color/red" />
 
-    <TextView
-        android:id="@+id/tvGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/tvType"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSpecies"
-        tools:text="Gender"
-        android:textSize="20sp"
-        style="@style/TextStyle"/>
-    <ProgressBar
-        android:id="@+id/pbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/tvCharacterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivCharacterDetail"
+                android:layout_alignParentLeft="true"
+                tools:text="Name"
+                android:layout_margin="8dp"
+                android:textSize="24sp"
+                style="@style/TextStyle"/>
+
+            <LinearLayout
+                android:id="@+id/lyStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCharacterName"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbStatus"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Status"
+                    android:textSize="20sp"
+                    style="@style/TextStyle"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSpecies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyStatus"
+                style="@style/TextDetailStyle"
+                tools:text="Species" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSpecies"
+                tools:text="Type"
+                style="@style/TextDetailStyle" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvType"
+                tools:text="Gender"
+                android:layout_marginBottom="10dp"
+                style="@style/TextDetailStyle"/>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/pbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
